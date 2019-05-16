@@ -3,10 +3,27 @@
   <head>
     <meta charset="utf-8">
     <title>Monstr</title>
+    <style>
+      .error::after {
+        color: red;
+        content: "--> Name field can't be blank"
+      }
+
+      .error#name-field {
+        border: solid red 1px;
+      }
+    </style>
   </head>
   <body>
     <h1>Monstr Inc.</h1>
-    <div id='create-monster'></div>
+    <div id='create-monster'>
+      <form id="new-monster-form" action="http://localhost:3000/monsters" method="POST">
+        <input type="text" id="name-field" placeholder="Name">
+        <input type="text" id="age-field" placeholder="Age">
+        <input type="text" id="bio-field" placeholder="Bio">
+        <input type="submit" id="submit-monster" value="Create Monster">
+      </form>
+    </div>
     <div id='monster-container'></div>
     <button id="back"><=</button>
     <span id="page-number">1</span>
